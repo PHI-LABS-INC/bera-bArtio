@@ -118,7 +118,7 @@ async function getTransactionsFromBeraChain(
     if (!response.result || response.result.length === 0) {
       return [];
     }
-    console.log('Fetched transactions:', response.result);
+
     return response.result
       .map(transformEtherscanCompatibleTxToGeneralTx)
       .filter((tx) => filterFunction(tx, contractAddresses, methodIds));

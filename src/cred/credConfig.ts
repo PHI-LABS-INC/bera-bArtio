@@ -33,6 +33,27 @@ export const credConfig: { [key: number]: CredConfig } = {
     tags: ['Transaction'],
     relatedLinks: ['https://www.berachain.com/'],
   },
+  1: {
+    ...baseSettings,
+    title: 'Stryke Options Novice',
+    requirement: 'Purchase Option on the Stryke platform',
+    credType: 'BASIC',
+    verificationType: 'SIGNATURE',
+    apiChoice: 'etherscan',
+    apiKeyOrUrl: process.env.ROUTESCAN_API_KEY ?? '',
+    contractAddress: '0x21e2C0AFd058A89FCf7caf3aEA3cB84Ae977B73D',
+    methodId: '0x0b2f6f3f',
+    filterFunction: txFilter_Standard,
+    mintEligibility: (result: number) => result > 0,
+    transactionCountCondition: (txs: any[], address: string) =>
+      txs.filter((tx) => tx.from.toLowerCase() === address.toLowerCase()).length,
+    project: 'BEX',
+    tags: ['DeFi'],
+    relatedLinks: [
+      'https://bartio.bex.berachain.com/swap',
+      'https://bartio.beratrail.io/address/0x21e2C0AFd058A89FCf7caf3aEA3cB84Ae977B73D',
+    ],
+  },
 };
 
 export const credVerifyEndpoint: { [key: number]: string } = Object.fromEntries(

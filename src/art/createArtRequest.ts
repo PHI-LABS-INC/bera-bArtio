@@ -2,6 +2,7 @@ import { ArtCreateInput } from '@phi-hub/sdk';
 import { readFileAsBase64 } from '../utils/readFiles';
 import { Address } from 'viem';
 
+export type ArtChainId = 80084;
 export async function createArtRequest(params: {
   name: string;
   description: string;

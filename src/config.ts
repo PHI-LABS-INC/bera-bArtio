@@ -26,5 +26,8 @@ export const executor: Address = executor_account.address;
 export const verifier_account = privateKeyToAccount(VERIFIER_PRIVATE_KEY);
 export const verifier: Address = verifier_account.address;
 
-export const rpc = 'https://bartio.rpc.berachain.com/';
+export const rpc = {
+  berachain: 'https://bartio.rpc.berachain.com/',
+  arbitrum: 'https://rpc.ankr.com/arbitrum',
+};
 export const ENDPOINT = 'bara-bArtio.vercel.app';

@@ -13,9 +13,12 @@ const MAX_RETRIES = 5;
 const INITIAL_DELAY = 1000;
 const MAX_DELAY = 60000; // Maximum wait of 60 seconds
 
-// BeraChain testnet chain ID
+// Network IDs
+const ETHEREUM_MAINNET_ID = 1;
 const BERACHAIN_TESTNET_ID = 80084;
-const BERACHAIN_NETWORK_ID = 'testnet';
+
+// Routescan API base URL
+const ROUTESCAN_API_BASE_URL = 'https://api.routescan.io/v2/network';
 
 export async function getTransactions(
   api_key: string,
@@ -27,7 +30,7 @@ export async function getTransactions(
   endblock: string,
   txFilter: TxFilterFunction,
 ): Promise<GeneralTxItem[]> {
-  return getTransactionsFromBeraChain(
+  return getTransactionsFromNetwork(
     api_key,
     address,
     contractAddresses,
@@ -39,14 +42,26 @@ export async function getTransactions(
   );
 }
 
-async function fetchTransactionsFromBeraChain(
+function getNetworkPath(network: Chain['id']): string {
+  switch (network) {
+    case ETHEREUM_MAINNET_ID:
+      return 'mainnet/evm/1';
+    case BERACHAIN_TESTNET_ID:
+      return 'testnet/evm/80084';
+    default:
+      throw new Error(`Unsupported network: ${network}`);
+  }
+}
+
+async function fetchTransactionsFromNetwork(
   address: string,
   startblock: string,
   endblock: string,
   api_key: string,
+  network: Chain['id'],
 ): Promise<EtherscanResponse> {
-  const apiBaseURL = 'https://api.routescan.io';
-  const url = `${apiBaseURL}/v2/network/${BERACHAIN_NETWORK_ID}/evm/${BERACHAIN_TESTNET_ID}/etherscan/api`;
+  const networkPath = getNetworkPath(network);
+  const url = `${ROUTESCAN_API_BASE_URL}/${networkPath}/etherscan/api`;
 
   const params = {
     module: 'account',
@@ -87,7 +102,7 @@ async function fetchTransactionsFromBeraChain(
   throw new Error('Max retries reached. Unable to fetch transactions.');
 }
 
-function transformEtherscanCompatibleTxToGeneralTx(tx: EtherscanTxItem): GeneralTxItem {
+function transformEtherscanTxToGeneralTx(tx: EtherscanTxItem): GeneralTxItem {
   return {
     hash: tx.hash,
     from: tx.from,
@@ -99,7 +114,7 @@ function transformEtherscanCompatibleTxToGeneralTx(tx: EtherscanTxItem): General
   };
 }
 
-async function getTransactionsFromBeraChain(
+async function getTransactionsFromNetwork(
   api_key: string,
   address: Address,
   contractAddresses: (Address | 'any')[],
@@ -109,18 +124,14 @@ async function getTransactionsFromBeraChain(
   endblock: string,
   filterFunction: TxFilterFunction,
 ): Promise<GeneralTxItem[]> {
-  if (network !== BERACHAIN_TESTNET_ID) {
-    throw new Error(`Unsupported network: ${network}. This function only supports BeraChain testnet.`);
-  }
-
   try {
-    const response = await fetchTransactionsFromBeraChain(address, startblock, endblock, api_key);
+    const response = await fetchTransactionsFromNetwork(address, startblock, endblock, api_key, network);
     if (!response.result || response.result.length === 0) {
       return [];
     }
 
     return response.result
-      .map(transformEtherscanCompatibleTxToGeneralTx)
+      .map(transformEtherscanTxToGeneralTx)
       .filter((tx) => filterFunction(tx, contractAddresses, methodIds));
   } catch (error) {
     console.error('Failed to fetch transactions:', error);

@@ -22,7 +22,7 @@ export type TxFilterFunction = (
 
 export type SignatureCredConfig = BaseCredConfig & {
   verificationType: 'SIGNATURE';
-  apiChoice: 'etherscan' | 'contractCall' | 'neynar';
+  apiChoice: 'etherscan' | 'contractCall' | 'balanceCheck' | 'nftbalance';
   apiKeyOrUrl: string;
   from?: Address;
   contractAddress: Address | Address[] | 'any';
@@ -42,6 +42,15 @@ export type ContractCallCredConfig = BaseCredConfig & {
   functionName: string;
   abi: any[];
   contractCallCondition: (result: any) => boolean;
+  args: (address: Address) => Promise<any[]>;
+};
+
+export type BalanceCheckCredConfig = BaseCredConfig & {
+  verificationType: 'SIGNATURE';
+  apiChoice: 'balanceCheck' | 'nftbalance';
+  apiKeyOrUrl: string;
+  contractAddress: Address;
+  checkCondition: (result: any) => boolean;
 };
 
 export type MerkleCredConfig = BaseCredConfig & {
@@ -49,7 +58,7 @@ export type MerkleCredConfig = BaseCredConfig & {
   fileName: string;
 };
 
-export type CredConfig = SignatureCredConfig | MerkleCredConfig | ContractCallCredConfig;
+export type CredConfig = SignatureCredConfig | MerkleCredConfig | ContractCallCredConfig | BalanceCheckCredConfig;
 export type CredResult = [boolean, string];
 
 export type EtherscanFilter = (a: EtherscanTxItem) => boolean;

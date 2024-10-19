@@ -1,24 +1,41 @@
 import { Address, Chain, createPublicClient, http, PublicClient } from 'viem';
-import { base } from 'viem/chains';
+import { bearNetworkChainTestnet, arbitrum } from 'viem/chains';
 import { ContractCallCredConfig, CredResult } from '../../utils/types';
 import { rpc } from '../../config';
 
-const targetChain = 80084;
+const supportedNetworks = {
+  BERACHAIN_TESTNET: 80084,
+  ARBITRUM_MAINNET: 42161,
+};
+
 export async function handleContractCall(config: ContractCallCredConfig, check_address: Address): Promise<CredResult> {
-  if (config.network !== targetChain) {
+  if (![supportedNetworks.BERACHAIN_TESTNET, supportedNetworks.ARBITRUM_MAINNET].includes(config.network)) {
     throw new Error(`Unsupported network: ${config.network}`);
   }
 
-  const publicClient = await createPublicClientForNetwork(base);
+  const chain = getChainForNetwork(config.network);
+  const publicClient = await createPublicClientForNetwork(chain, config.network);
   const contractCallResult = await callContract(publicClient, config, check_address);
   return handleContractCallResult(config, contractCallResult);
 }
 
-async function createPublicClientForNetwork(chain: Chain): Promise<PublicClient> {
+function getChainForNetwork(network: number): Chain {
+  switch (network) {
+    case supportedNetworks.BERACHAIN_TESTNET:
+      return bearNetworkChainTestnet;
+    case supportedNetworks.ARBITRUM_MAINNET:
+      return arbitrum;
+    default:
+      throw new Error(`Unsupported network: ${network}`);
+  }
+}
+
+async function createPublicClientForNetwork(chain: Chain, network: number): Promise<PublicClient> {
   try {
+    const rpcUrl = getRpcUrlForNetwork(network);
     const publicClient = createPublicClient({
       chain,
-      transport: http(rpc),
+      transport: http(rpcUrl),
     });
 
     if (!publicClient) {
@@ -32,16 +49,28 @@ async function createPublicClientForNetwork(chain: Chain): Promise<PublicClient>
   }
 }
 
+function getRpcUrlForNetwork(network: number): string {
+  switch (network) {
+    case supportedNetworks.BERACHAIN_TESTNET:
+      return rpc.berachain;
+    case supportedNetworks.ARBITRUM_MAINNET:
+      return rpc.arbitrum;
+    default:
+      throw new Error(`No RPC URL configured for network: ${network}`);
+  }
+}
+
 async function callContract(
   publicClient: PublicClient,
   config: ContractCallCredConfig,
   check_address: Address,
 ): Promise<unknown> {
+  const args = await config.args(check_address);
   return publicClient.readContract({
     address: config.contractAddress,
     abi: config.abi,
     functionName: config.functionName,
-    args: [check_address],
+    args,
   });
 }
 

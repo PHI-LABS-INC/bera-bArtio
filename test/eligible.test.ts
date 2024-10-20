@@ -14,6 +14,7 @@ describe('check_cred', () => {
       it('should return true and correct data for valid address', async () => {
         const [result, data] = await check_cred(testCase.addresses.valid, parseInt(id));
         expect(result).toBe(true);
+
         expect(testCase.expectedDataCheck(data)).toBe(true);
       });
 

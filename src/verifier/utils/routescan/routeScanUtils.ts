@@ -152,7 +152,14 @@ export async function handleNFTBalanceCheck(
 
     // Filter NFTs based on the contract address if specified
     const relevantNFTs = config.contractAddress
-      ? response.result.filter((nft) => nft.TokenAddress.toLowerCase() === config.contractAddress.toLowerCase())
+      ? response.result.filter((nft) => {
+          const nftAddress = nft.TokenAddress.toLowerCase();
+          if (Array.isArray(config.contractAddress)) {
+            return config.contractAddress.some((address) => address.toLowerCase() === nftAddress);
+          } else {
+            return nftAddress === config.contractAddress.toLowerCase();
+          }
+        })
       : response.result;
     const totalBalance = relevantNFTs.reduce((sum, nft) => sum + BigInt(nft.TokenQuantity), 0n);
 

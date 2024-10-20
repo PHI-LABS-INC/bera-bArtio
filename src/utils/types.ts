@@ -49,7 +49,7 @@ export type BalanceCheckCredConfig = BaseCredConfig & {
   verificationType: 'SIGNATURE';
   apiChoice: 'balanceCheck' | 'nftbalance';
   apiKeyOrUrl: string;
-  contractAddress: Address;
+  contractAddress: Address | Address[];
   checkCondition: (result: any) => boolean;
 };
 

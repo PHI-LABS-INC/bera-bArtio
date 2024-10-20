@@ -221,7 +221,7 @@ export const testCases = {
   27: {
     title: credConfig[27].title,
     addresses: {
-      valid: '0x317F7aA365570F3105a6725Ffb647069507f6408',
+      valid: '0x32B8E1AE0af3F8f335F59A191617aB7A0885f6a0',
       invalid: '0xb7Caa0ed757bbFaA208342752C9B1c541e36a4b9',
     },
     expectedDataCheck: (data: string) => parseInt(data) >= 1,
@@ -262,6 +262,158 @@ export const testCases = {
     title: credConfig[32].title,
     addresses: {
       valid: '0x32B8E1AE0af3F8f335F59A191617aB7A0885f6a0',
+      invalid: '0xb7Caa0ed757bbFaA208342752C9B1c541e36a4b9',
+    },
+    expectedDataCheck: (data: string) => parseInt(data) >= 1,
+  },
+  33: {
+    title: credConfig[33].title,
+    addresses: {
+      valid: '0x32B8E1AE0af3F8f335F59A191617aB7A0885f6a0',
+      invalid: '0xb7Caa0ed757bbFaA208342752C9B1c541e36a4b9',
+    },
+    expectedDataCheck: (data: string) => parseInt(data) >= 1,
+  },
+  34: {
+    title: credConfig[34].title,
+    addresses: {
+      valid: '0x32B8E1AE0af3F8f335F59A191617aB7A0885f6a0',
+      invalid: '0xb7Caa0ed757bbFaA208342752C9B1c541e36a4b9',
+    },
+    expectedDataCheck: (data: string) => data === '',
+  },
+  35: {
+    title: credConfig[35].title,
+    addresses: {
+      valid: '0x32B8E1AE0af3F8f335F59A191617aB7A0885f6a0',
+      invalid: '0xb7Caa0ed757bbFaA208342752C9B1c541e36a4b9',
+    },
+    expectedDataCheck: (data: string) => data === '',
+  },
+  36: {
+    title: credConfig[36].title,
+    addresses: {
+      valid: '0xF3E36e557A325AF44aCc5834759055819e22Aece',
+      invalid: '0xb7Caa0ed757bbFaA208342752C9B1c541e36a4b9',
+    },
+    expectedDataCheck: (data: string) => parseInt(data) >= 1,
+  },
+  37: {
+    title: credConfig[37].title,
+    addresses: {
+      valid: '0x9949648C4e91257bcE17eAd15Bc747aEEB8CED33',
+      invalid: '0xb7Caa0ed757bbFaA208342752C9B1c541e36a4b9',
+    },
+    expectedDataCheck: (data: string) => parseInt(data) >= 1,
+  },
+  38: {
+    title: credConfig[38].title,
+    addresses: {
+      valid: '0x6D83cac25CfaCdC7035Bed947B92b64e6a8B8090',
+      invalid: '0xb7Caa0ed757bbFaA208342752C9B1c541e36a4b9',
+    },
+    expectedDataCheck: (data: string) => data === '',
+  },
+  39: {
+    title: credConfig[39].title,
+    addresses: {
+      valid: '0x32B8E1AE0af3F8f335F59A191617aB7A0885f6a0',
+      invalid: '0xb7Caa0ed757bbFaA208342752C9B1c541e36a4b9',
+    },
+    expectedDataCheck: (data: string) => parseInt(data) >= 1,
+  },
+  40: {
+    title: credConfig[40].title,
+    addresses: {
+      valid: '0x32B8E1AE0af3F8f335F59A191617aB7A0885f6a0',
+      invalid: '0xb7Caa0ed757bbFaA208342752C9B1c541e36a4b9',
+    },
+    expectedDataCheck: (data: string) => parseInt(data) >= 1,
+  },
+  41: {
+    title: credConfig[41].title,
+    addresses: {
+      valid: '0x7bfee91193d9df2ac0bfe90191d40f23c773c060',
+      invalid: '0xb7Caa0ed757bbFaA208342752C9B1c541e36a4b9',
+    },
+    expectedDataCheck: (data: string) => parseInt(data) >= 1,
+  },
+  42: {
+    title: credConfig[42].title,
+    addresses: {
+      valid: '0x7bfee91193d9df2ac0bfe90191d40f23c773c060',
+      invalid: '0xb7Caa0ed757bbFaA208342752C9B1c541e36a4b9',
+    },
+    expectedDataCheck: (data: string) => parseInt(data) >= 1,
+  },
+  43: {
+    title: credConfig[43].title,
+    addresses: {
+      valid: '0x32B8E1AE0af3F8f335F59A191617aB7A0885f6a0',
+      invalid: '0xb7Caa0ed757bbFaA208342752C9B1c541e36a4b9',
+    },
+    expectedDataCheck: (data: string) => parseInt(data) >= 1,
+  },
+  44: {
+    title: credConfig[44].title,
+    addresses: {
+      valid: '0x32B8E1AE0af3F8f335F59A191617aB7A0885f6a0',
+      invalid: '0xb7Caa0ed757bbFaA208342752C9B1c541e36a4b9',
+    },
+    expectedDataCheck: (data: string) => parseInt(data) >= 1,
+  },
+  45: {
+    title: credConfig[45].title,
+    addresses: {
+      valid: '0x32B8E1AE0af3F8f335F59A191617aB7A0885f6a0',
+      invalid: '0xb7Caa0ed757bbFaA208342752C9B1c541e36a4b9',
+    },
+    expectedDataCheck: (data: string) => parseInt(data) >= 1,
+  },
+  46: {
+    title: credConfig[46].title,
+    addresses: {
+      valid: '0x32B8E1AE0af3F8f335F59A191617aB7A0885f6a0',
+      invalid: '0xb7Caa0ed757bbFaA208342752C9B1c541e36a4b9',
+    },
+    expectedDataCheck: (data: string) => parseInt(data) >= 1,
+  },
+  47: {
+    title: credConfig[47].title,
+    addresses: {
+      valid: '0x32B8E1AE0af3F8f335F59A191617aB7A0885f6a0',
+      invalid: '0xb7Caa0ed757bbFaA208342752C9B1c541e36a4b9',
+    },
+    expectedDataCheck: (data: string) => parseInt(data) >= 1,
+  },
+  48: {
+    title: credConfig[48].title,
+    addresses: {
+      valid: '0x32B8E1AE0af3F8f335F59A191617aB7A0885f6a0',
+      invalid: '0xb7Caa0ed757bbFaA208342752C9B1c541e36a4b9',
+    },
+    expectedDataCheck: (data: string) => parseInt(data) >= 1,
+  },
+  49: {
+    title: credConfig[49].title,
+    addresses: {
+      valid: '0x32B8E1AE0af3F8f335F59A191617aB7A0885f6a0',
+      invalid: '0xb7Caa0ed757bbFaA208342752C9B1c541e36a4b9',
+    },
+    expectedDataCheck: (data: string) => parseInt(data) >= 1,
+  },
+  50: {
+    title: credConfig[50].title,
+    addresses: {
+      valid: '0x8eFaBD92C956d75AD725A4056a40989802e58Be9',
+      invalid: '0xb7Caa0ed757bbFaA208342752C9B1c541e36a4b9',
+    },
+    expectedDataCheck: (data: string) => parseInt(data) >= 1,
+  },
+  51: {
+    title: credConfig[51].title,
+    addresses: {
+      valid: '0x0c298a54de2572BA097DBe7BAbe4A3Aae238eF05',
       invalid: '0xb7Caa0ed757bbFaA208342752C9B1c541e36a4b9',
     },
     expectedDataCheck: (data: string) => parseInt(data) >= 1,

@@ -18,7 +18,7 @@ const baseSettings = {
 export const credConfig: { [key: number]: CredConfig } = {
   0: {
     ...baseSettings,
-    title: 'Transact on Bara bArtio',
+    title: 'bArtio Transactor',
     requirement: 'Execute any transaction on Bara bArtio',
     credType: 'ADVANCED',
     verificationType: 'SIGNATURE',
@@ -129,7 +129,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   },
   6: {
     ...baseSettings,
-    title: 'Beraborrower',
+    title: 'BeraBorrower',
     requirement: 'Perform a token borrow on Beraborrower on Bara bArtio',
     credType: 'BASIC',
     verificationType: 'SIGNATURE',
@@ -147,8 +147,8 @@ export const credConfig: { [key: number]: CredConfig } = {
   },
   7: {
     ...baseSettings,
-    title: 'Meme swaper',
-    requirement: 'Perform a token swap on memeswap on Bara bArtio',
+    title: 'Meme Swapper',
+    requirement: 'Perform a token swap on Memeswap on Bara bArtio',
     credType: 'BASIC',
     verificationType: 'SIGNATURE',
     apiChoice: 'etherscan',
@@ -165,8 +165,8 @@ export const credConfig: { [key: number]: CredConfig } = {
   },
   8: {
     ...baseSettings,
-    title: 'Goldilocks swaper',
-    requirement: 'Perform a token swap on memeswap on Bara bArtio',
+    title: 'Goldilocks Swapper',
+    requirement: 'Perform a token swap on Memeswap on Bara bArtio',
     credType: 'BASIC',
     verificationType: 'SIGNATURE',
     apiChoice: 'etherscan',
@@ -202,7 +202,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   10: {
     ...baseSettings,
     title: 'BGT Staker',
-    requirement: 'Stake iBGT token on infrared on Bara bArtio',
+    requirement: 'Stake iBGT token on Infrared on Bara bArtio',
     credType: 'BASIC',
     verificationType: 'SIGNATURE',
     apiChoice: 'etherscan',
@@ -255,7 +255,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   },
   13: {
     ...baseSettings,
-    title: 'Deposit Honey to Beracana',
+    title: 'Honey Bear',
     requirement: 'Deposit Honey in Bera Bank on Bara bArtio',
     credType: 'BASIC',
     verificationType: 'SIGNATURE',
@@ -273,7 +273,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   },
   14: {
     ...baseSettings,
-    title: 'YEET Token Holder',
+    title: 'YEETer',
     requirement: 'Own at least one YEET Token',
     credType: 'ADVANCED',
     verificationType: 'SIGNATURE',
@@ -290,7 +290,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   },
   15: {
     ...baseSettings,
-    title: 'BEDROCK Player',
+    title: 'Bedrock Player',
     requirement: 'Stake WBTC to mint uniBTC BEDROCK on Bartio Testnet',
     credType: 'ADVANCED',
     verificationType: 'SIGNATURE',
@@ -307,7 +307,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   },
   16: {
     ...baseSettings,
-    title: 'Honey Comb Holder',
+    title: 'Honey Comber',
     requirement: 'Own at least one Honey Comb Token',
     credType: 'ADVANCED',
     network: 1,
@@ -326,7 +326,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   },
   17: {
     ...baseSettings,
-    title: 'TheHoneyCast Holder',
+    title: 'Honey Caster',
     requirement: 'Own at least one theHoneyCast Token',
     credType: 'ADVANCED',
     network: 1,
@@ -418,7 +418,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   },
   22: {
     ...baseSettings,
-    title: 'WeBera Finance Depositor',
+    title: 'WeBera Honey Bender',
     requirement: 'Deposit Honey to WeBera Finance',
     credType: 'BASIC',
     verificationType: 'SIGNATURE',
@@ -454,7 +454,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   },
   24: {
     ...baseSettings,
-    title: 'Lend Honey to Timeswap',
+    title: 'Timeswap Beehive',
     requirement: 'Lend Honey to Timeswap',
     credType: 'BASIC',
     verificationType: 'SIGNATURE',
@@ -472,7 +472,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   },
   25: {
     ...baseSettings,
-    title: 'POTLUCK CHEF',
+    title: 'Potluck Chef',
     requirement: 'Become a POTLUCK CHEF and Preparing Your Feast',
     credType: 'BASIC',
     verificationType: 'SIGNATURE',
@@ -504,7 +504,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   },
   27: {
     ...baseSettings,
-    title: 'Assets deposited to Dolomite',
+    title: 'Bears in Dolomite',
     requirement: 'Assets deposited to Dolomite on Bara bArtio',
     credType: 'ADVANCED',
     verificationType: 'SIGNATURE',
@@ -561,7 +561,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   },
   29: {
     ...baseSettings,
-    title: 'Beracer Brand Brix',
+    title: 'Brand Brix Pass',
     requirement: 'Own at least one Beracer Brand Brix',
     credType: 'ADVANCED',
     network: 42161,
@@ -600,7 +600,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   },
   30: {
     ...baseSettings,
-    title: 'Hungrybera',
+    title: 'Hungry Bear',
     requirement: 'Own at least one Hungrybera Token',
     credType: 'ADVANCED',
     network: 42161,
@@ -658,7 +658,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   },
   32: {
     ...baseSettings,
-    title: 'GOLD STAKER',
+    title: 'The Gold Conquest',
     requirement: 'Stake Gold on grandconquest on Bara bArtio',
     credType: 'ADVANCED',
     verificationType: 'SIGNATURE',
@@ -676,7 +676,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   },
   33: {
     ...baseSettings,
-    title: 'Bera Minter',
+    title: 'Bera Gladiator',
     requirement: 'Mint Bera on BEAR ARENA on Bara bArtio',
     credType: 'ADVANCED',
     verificationType: 'SIGNATURE',
@@ -694,7 +694,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   },
   34: {
     ...baseSettings,
-    title: 'Berabot faucet (Last 1000 Blocks)',
+    title: 'Berabotter',
     requirement: 'Got Berabot faucet in the last 1000 blocks',
     credType: 'BASIC',
     verificationType: 'SIGNATURE',
@@ -713,7 +713,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   },
   35: {
     ...baseSettings,
-    title: 'Create Position in Overlay Protocol',
+    title: 'Bera Overlays',
     requirement: 'Create Position in Overlay Protocol',
     credType: 'BASIC',
     verificationType: 'SIGNATURE',
@@ -811,7 +811,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   },
   38: {
     ...baseSettings,
-    title: 'Create a Contract on Bara bArtio',
+    title: 'Baby Bear',
     requirement: 'Create a Contract on Bara bArtio',
     credType: 'BASIC',
     verificationType: 'SIGNATURE',
@@ -852,8 +852,8 @@ export const credConfig: { [key: number]: CredConfig } = {
   },
   39: {
     ...baseSettings,
-    title: 'Buy Share Cred',
-    requirement: 'buy share cred on Phi Protocol on Bara bArtio',
+    title: 'Bera Cartridge',
+    requirement: 'Buy share cred on Phi Protocol on Bara bArtio',
     credType: 'ADVANCED',
     verificationType: 'SIGNATURE',
     apiChoice: 'etherscan',
@@ -870,7 +870,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   },
   40: {
     ...baseSettings,
-    title: 'Create Pool on Sudoswap',
+    title: 'Sudoberas Pool',
     requirement: 'Create Pool on Sudoswap on Bara bArtio',
     credType: 'ADVANCED',
     verificationType: 'SIGNATURE',
@@ -917,7 +917,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   },
   42: {
     ...baseSettings,
-    title: 'Wagmibera',
+    title: 'WAGMI Bear',
     requirement: 'Own at least one Wagmibera Token',
     credType: 'ADVANCED',
     network: 42161,
@@ -976,7 +976,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   },
   44: {
     ...baseSettings,
-    title: 'NATIVE WBERA Supplyer',
+    title: 'WBERA Supplier',
     requirement: 'Deposit WBERA to NATIVE on Bara bArtio',
     credType: 'ADVANCED',
     verificationType: 'SIGNATURE',
@@ -994,7 +994,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   },
   45: {
     ...baseSettings,
-    title: 'Buy Positons on Stryke',
+    title: 'Bera Stryker',
     requirement: 'Buy Positons on Stryke',
     credType: 'ADVANCED',
     verificationType: 'SIGNATURE',
@@ -1012,7 +1012,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   },
   46: {
     ...baseSettings,
-    title: 'Deposit iGBT and Borrow MEAD',
+    title: 'Meader',
     requirement: 'Deposit iGBT and Borrow MEAD on ROOTS',
     credType: 'ADVANCED',
     verificationType: 'SIGNATURE',
@@ -1030,7 +1030,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   },
   47: {
     ...baseSettings,
-    title: 'HYT Token Holder',
+    title: 'HYTS',
     requirement: 'Own at least one HYT Token',
     credType: 'ADVANCED',
     verificationType: 'SIGNATURE',
@@ -1044,7 +1044,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   },
   48: {
     ...baseSettings,
-    title: 'ZNS registerDomains',
+    title: 'My Honey Boomain',
     requirement: 'Register honey domain on ZNS on Bara bArtio',
     credType: 'ADVANCED',
     verificationType: 'SIGNATURE',
@@ -1062,7 +1062,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   },
   49: {
     ...baseSettings,
-    title: 'DEPOSIT ZERU',
+    title: 'ZERU > ZERO',
     requirement: 'DEPOSIT ASSETS on ZERU on Bara bArtio',
     credType: 'ADVANCED',
     verificationType: 'SIGNATURE',

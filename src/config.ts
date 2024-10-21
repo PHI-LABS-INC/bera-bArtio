@@ -30,4 +30,4 @@ export const rpc = {
   berachain: 'https://bartio.rpc.berachain.com/',
   arbitrum: 'https://rpc.ankr.com/arbitrum',
 };
-export const ENDPOINT = 'bara-bArtio.vercel.app';
+export const ENDPOINT = 'bera-bArtio.vercel.app';

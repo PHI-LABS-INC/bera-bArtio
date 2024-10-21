@@ -45,7 +45,7 @@ async function main() {
 
   let results = loadExistingResults();
 
-  for (let configId = 0; configId <= 0; configId++) {
+  for (let configId = 29; configId <= 51; configId++) {
     try {
       console.log(`Processing cred config: ${configId}`);
 
@@ -73,6 +73,7 @@ async function main() {
       await new Promise((resolve) => setTimeout(resolve, 2000));
 
       console.log(`Processing art config: ${configId}`);
+
       const artSetting = artSettings[configId];
       if (artSetting) {
         let artRequest;

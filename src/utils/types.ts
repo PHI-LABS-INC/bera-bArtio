@@ -127,6 +127,20 @@ export type ApiArtSetting = BaseArtSetting & {
   previewInput: { address: Address; data?: string };
 };
 
+export type UpdateArtRequest = {
+  name?: string;
+  description?: string;
+  imagePath: string;
+  tags?: string[];
+  receiver: Address;
+  maxSupply: number | bigint;
+  price: number;
+  start: number;
+  end: number;
+  royaltyBPS: number;
+  royaltyRecipient: Address;
+};
+
 export type ArtSetting = ImageArtSetting | ApiArtSetting;
 
 export type VerifySetting = {

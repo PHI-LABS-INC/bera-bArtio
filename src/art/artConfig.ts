@@ -6,7 +6,7 @@ import { Address } from 'viem/accounts';
 
 const baseSettings = {
   price: 0,
-  maxSupply: undefined,
+  maxSupply: 1000,
   soulbound: false,
   startDate: Math.floor(Date.now() / 1000),
   endDate: Season0endDate,

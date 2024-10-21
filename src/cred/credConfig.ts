@@ -94,7 +94,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   4: {
     ...baseSettings,
     title: 'Ooga Booga Supporter',
-    requirement: 'Perform a token swap on BEX on Bara bArtio',
+    requirement: 'Perform a token swap on Ooga Booga on Bara bArtio',
     credType: 'BASIC',
     verificationType: 'SIGNATURE',
     apiChoice: 'etherscan',
@@ -147,8 +147,8 @@ export const credConfig: { [key: number]: CredConfig } = {
   },
   7: {
     ...baseSettings,
-    title: 'Meme Swapper',
-    requirement: 'Perform a token swap on Memeswap on Bara bArtio',
+    title: 'Meme swaper',
+    requirement: 'Perform a token swap on Memswap on Bara bArtio',
     credType: 'BASIC',
     verificationType: 'SIGNATURE',
     apiChoice: 'etherscan',
@@ -165,8 +165,8 @@ export const credConfig: { [key: number]: CredConfig } = {
   },
   8: {
     ...baseSettings,
-    title: 'Goldilocks Swapper',
-    requirement: 'Perform a token swap on Memeswap on Bara bArtio',
+    title: 'Goldilocks swaper',
+    requirement: 'Perform a token swap on Goldilocks on Bara bArtio',
     credType: 'BASIC',
     verificationType: 'SIGNATURE',
     apiChoice: 'etherscan',

@@ -12,14 +12,14 @@ const baseSettings = {
   buyShareRoyalty: 0, // buy share royalty 0%
   sellShareRoyalty: 50, // sell royalty 0.5%
   quantity: 1, // initial share quantity
-  verificationSource: 'https://github.com/PHI-LABS-INC/bara-bArtio',
+  verificationSource: 'https://github.com/PHI-LABS-INC/bera-bArtio',
 };
 
 export const credConfig: { [key: number]: CredConfig } = {
   0: {
     ...baseSettings,
     title: 'bArtio Transactor',
-    requirement: 'Execute any transaction on Bara bArtio',
+    requirement: 'Execute any transaction on Bera bArtio',
     credType: 'ADVANCED',
     verificationType: 'SIGNATURE',
     apiChoice: 'etherscan',
@@ -30,14 +30,14 @@ export const credConfig: { [key: number]: CredConfig } = {
     mintEligibility: (result: number) => result > 0,
     transactionCountCondition: (txs: any[], address: string) =>
       txs.filter((tx) => tx.from.toLowerCase() === address.toLowerCase()).length,
-    project: 'Bara',
+    project: 'Bera',
     tags: ['Transaction'],
     relatedLinks: ['https://www.berachain.com/', 'https://bartio.faucet.berachain.com/'],
   },
   1: {
     ...baseSettings,
     title: 'BEX Dealer',
-    requirement: 'Perform a token swap on BEX on Bara bArtio',
+    requirement: 'Perform a token swap on BEX on Bera bArtio',
     credType: 'BASIC',
     verificationType: 'SIGNATURE',
     apiChoice: 'etherscan',
@@ -58,7 +58,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   2: {
     ...baseSettings,
     title: 'BEND Supporter',
-    requirement: 'Supply assets to BEND lending pool on Bara bArtio',
+    requirement: 'Supply assets to BEND lending pool on Bera bArtio',
     credType: 'BASIC',
     verificationType: 'SIGNATURE',
     apiChoice: 'etherscan',
@@ -75,8 +75,8 @@ export const credConfig: { [key: number]: CredConfig } = {
   },
   3: {
     ...baseSettings,
-    title: 'Verified Baranames',
-    requirement: 'Baranames: Register a human-readable name for your wallet address',
+    title: 'Verified Beranames',
+    requirement: 'Beranames: Register a human-readable name for your wallet address',
     credType: 'BASIC',
     verificationType: 'SIGNATURE',
     apiChoice: 'etherscan',
@@ -87,14 +87,14 @@ export const credConfig: { [key: number]: CredConfig } = {
     mintEligibility: (result: number) => result > 0,
     transactionCountCondition: (txs: any[], address: string) =>
       txs.filter((tx) => tx.from.toLowerCase() === address.toLowerCase()).length,
-    project: 'Baranames',
-    tags: ['Bara'],
+    project: 'Beranames',
+    tags: ['Bera'],
     relatedLinks: ['https://www.beranames.com/'],
   },
   4: {
     ...baseSettings,
     title: 'Ooga Booga Supporter',
-    requirement: 'Perform a token swap on Ooga Booga on Bara bArtio',
+    requirement: 'Perform a token swap on Ooga Booga on Bera bArtio',
     credType: 'BASIC',
     verificationType: 'SIGNATURE',
     apiChoice: 'etherscan',
@@ -112,7 +112,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   5: {
     ...baseSettings,
     title: 'Kodiak Trader',
-    requirement: 'Perform a token swap on Kodiak on Bara bArtio',
+    requirement: 'Perform a token swap on Kodiak on Bera bArtio',
     credType: 'BASIC',
     verificationType: 'SIGNATURE',
     apiChoice: 'etherscan',
@@ -130,7 +130,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   6: {
     ...baseSettings,
     title: 'BeraBorrower',
-    requirement: 'Perform a token borrow on Beraborrower on Bara bArtio',
+    requirement: 'Perform a token borrow on Beraborrower on Bera bArtio',
     credType: 'BASIC',
     verificationType: 'SIGNATURE',
     apiChoice: 'etherscan',
@@ -148,7 +148,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   7: {
     ...baseSettings,
     title: 'Meme swaper',
-    requirement: 'Perform a token swap on Memswap on Bara bArtio',
+    requirement: 'Perform a token swap on Memswap on Bera bArtio',
     credType: 'BASIC',
     verificationType: 'SIGNATURE',
     apiChoice: 'etherscan',
@@ -166,7 +166,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   8: {
     ...baseSettings,
     title: 'Goldilocks swaper',
-    requirement: 'Perform a token swap on Goldilocks on Bara bArtio',
+    requirement: 'Perform a token swap on Goldilocks on Bera bArtio',
     credType: 'BASIC',
     verificationType: 'SIGNATURE',
     apiChoice: 'etherscan',
@@ -184,7 +184,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   9: {
     ...baseSettings,
     title: 'BGT Contributor',
-    requirement: 'Claim BGT token on BGT stataion on Bara bArtio',
+    requirement: 'Claim BGT token on BGT stataion on Bera bArtio',
     credType: 'BASIC',
     verificationType: 'SIGNATURE',
     apiChoice: 'etherscan',
@@ -202,7 +202,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   10: {
     ...baseSettings,
     title: 'BGT Staker',
-    requirement: 'Stake iBGT token on Infrared on Bara bArtio',
+    requirement: 'Stake iBGT token on Infrared on Bera bArtio',
     credType: 'BASIC',
     verificationType: 'SIGNATURE',
     apiChoice: 'etherscan',
@@ -220,7 +220,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   11: {
     ...baseSettings,
     title: 'BERPs Contributor',
-    requirement: 'Create Position on BERPs on Bara bArtio',
+    requirement: 'Create Position on BERPs on Bera bArtio',
     credType: 'BASIC',
     verificationType: 'SIGNATURE',
     apiChoice: 'etherscan',
@@ -238,7 +238,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   12: {
     ...baseSettings,
     title: 'JNKY Minter',
-    requirement: 'Mint JNKT token on JUNKY URSAS on Bara bArtio',
+    requirement: 'Mint JNKT token on JUNKY URSAS on Bera bArtio',
     credType: 'BASIC',
     verificationType: 'SIGNATURE',
     apiChoice: 'etherscan',
@@ -256,7 +256,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   13: {
     ...baseSettings,
     title: 'Honey Bear',
-    requirement: 'Deposit Honey in Bera Bank on Bara bArtio',
+    requirement: 'Deposit Honey in Bera Bank on Bera bArtio',
     credType: 'BASIC',
     verificationType: 'SIGNATURE',
     apiChoice: 'etherscan',
@@ -346,7 +346,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   18: {
     ...baseSettings,
     title: 'BeraMarket Trader',
-    requirement: 'Create Offer on BeraMarket on Bara bArtio',
+    requirement: 'Create Offer on BeraMarket on Bera bArtio',
     credType: 'BASIC',
     verificationType: 'SIGNATURE',
     apiChoice: 'etherscan',
@@ -505,7 +505,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   27: {
     ...baseSettings,
     title: 'Bears in Dolomite',
-    requirement: 'Assets deposited to Dolomite on Bara bArtio',
+    requirement: 'Assets deposited to Dolomite on Bera bArtio',
     credType: 'ADVANCED',
     verificationType: 'SIGNATURE',
     apiChoice: 'etherscan',
@@ -641,7 +641,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   31: {
     ...baseSettings,
     title: 'Berally Starter',
-    requirement: 'Join Berally on Bara bArtio',
+    requirement: 'Join Berally on Bera bArtio',
     credType: 'ADVANCED',
     verificationType: 'SIGNATURE',
     apiChoice: 'etherscan',
@@ -659,7 +659,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   32: {
     ...baseSettings,
     title: 'The Gold Conquest',
-    requirement: 'Stake Gold on grandconquest on Bara bArtio',
+    requirement: 'Stake Gold on grandconquest on Bera bArtio',
     credType: 'ADVANCED',
     verificationType: 'SIGNATURE',
     apiChoice: 'etherscan',
@@ -677,7 +677,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   33: {
     ...baseSettings,
     title: 'Bera Gladiator',
-    requirement: 'Mint Bera on BEAR ARENA on Bara bArtio',
+    requirement: 'Mint Bera on BEAR ARENA on Bera bArtio',
     credType: 'ADVANCED',
     verificationType: 'SIGNATURE',
     apiChoice: 'etherscan',
@@ -812,7 +812,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   38: {
     ...baseSettings,
     title: 'Baby Bear',
-    requirement: 'Create a Contract on Bara bArtio',
+    requirement: 'Create a Contract on Bera bArtio',
     credType: 'BASIC',
     verificationType: 'SIGNATURE',
     apiChoice: 'etherscan',
@@ -853,7 +853,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   39: {
     ...baseSettings,
     title: 'Bera Cartridge',
-    requirement: 'Buy share cred on Phi Protocol on Bara bArtio',
+    requirement: 'Buy share cred on Phi Protocol on Bera bArtio',
     credType: 'ADVANCED',
     verificationType: 'SIGNATURE',
     apiChoice: 'etherscan',
@@ -871,7 +871,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   40: {
     ...baseSettings,
     title: 'Sudoberas Pool',
-    requirement: 'Create Pool on Sudoswap on Bara bArtio',
+    requirement: 'Create Pool on Sudoswap on Bera bArtio',
     credType: 'ADVANCED',
     verificationType: 'SIGNATURE',
     apiChoice: 'etherscan',
@@ -959,7 +959,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   43: {
     ...baseSettings,
     title: 'Dirac Decision Maker',
-    requirement: 'Deposit USDC Dirac Decision Making Algorithm on Bara bArtio',
+    requirement: 'Deposit USDC Dirac Decision Making Algorithm on Bera bArtio',
     credType: 'ADVANCED',
     verificationType: 'SIGNATURE',
     apiChoice: 'etherscan',
@@ -977,7 +977,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   44: {
     ...baseSettings,
     title: 'WBERA Supplier',
-    requirement: 'Deposit WBERA to NATIVE on Bara bArtio',
+    requirement: 'Deposit WBERA to NATIVE on Bera bArtio',
     credType: 'ADVANCED',
     verificationType: 'SIGNATURE',
     apiChoice: 'etherscan',
@@ -1045,7 +1045,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   48: {
     ...baseSettings,
     title: 'My Honey Boomain',
-    requirement: 'Register honey domain on ZNS on Bara bArtio',
+    requirement: 'Register honey domain on ZNS on Bera bArtio',
     credType: 'ADVANCED',
     verificationType: 'SIGNATURE',
     apiChoice: 'etherscan',
@@ -1063,7 +1063,7 @@ export const credConfig: { [key: number]: CredConfig } = {
   49: {
     ...baseSettings,
     title: 'ZERU > ZERO',
-    requirement: 'DEPOSIT ASSETS on ZERU on Bara bArtio',
+    requirement: 'DEPOSIT ASSETS on ZERU on Bera bArtio',
     credType: 'ADVANCED',
     verificationType: 'SIGNATURE',
     apiChoice: 'etherscan',

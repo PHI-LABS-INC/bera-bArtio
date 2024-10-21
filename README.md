@@ -1,4 +1,4 @@
-# PHI BARA SEASON 1
+# PHI BERA SEASON 1
 
 #### License
 

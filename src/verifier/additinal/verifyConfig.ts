@@ -8,10 +8,8 @@ const configPath = path.join(__dirname, 'verifyConfig.json');
 const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
 
 const RESULTS_FILE = path.join(__dirname, '../../../public/assets/output', 'cred_art_results_80084.json');
-console.log('RESULTS_FILE:', RESULTS_FILE);
 
 const tempVerifySettings = getVerifySettings();
-console.log('tempVerifySettings:', tempVerifySettings);
 
 function loadExistingResults(): { configId: number; credId: number; artId?: number }[] {
   if (fs.existsSync(RESULTS_FILE)) {

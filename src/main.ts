@@ -21,7 +21,6 @@ const artChainId = 80084;
 const OUTPUT_FILE = path.join(process.cwd(), 'public/assets/output', `cred_art_results_${artChainId}.json`);
 
 const EXECUTOR_PRIVATE_KEY = hexToPrivateKey(getEnvVar('EXECUTOR_PRIVATE_KEY'));
-
 const executor_account = privateKeyToAccount(EXECUTOR_PRIVATE_KEY);
 const executor: Address = executor_account.address;
 

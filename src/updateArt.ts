@@ -1,10 +1,10 @@
 import { Hex } from 'viem';
 import { ArtManager } from '@phi-hub/sdk';
 import { artSettings } from './art/artConfig';
-import { CREATOR_PRIVATE_KEY } from './config';
 import fs from 'fs';
 import path from 'path';
 import { readFileAsBase64 } from './utils/readFiles';
+import { getEnvVar, hexToPrivateKey } from './config';
 
 const artChainId = 80084; // PHI Testnet
 
@@ -19,6 +19,7 @@ function loadExistingResults(): any[] {
 }
 
 async function updateArtScript() {
+  const CREATOR_PRIVATE_KEY = hexToPrivateKey(getEnvVar('CREATOR_PRIVATE_KEY'));
   const privateKey = CREATOR_PRIVATE_KEY as Hex;
 
   const artManager = new ArtManager(privateKey, artChainId);

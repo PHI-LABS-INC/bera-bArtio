@@ -3,10 +3,11 @@ import { createCredRequest } from './cred/createCredRequest';
 import { createArtRequest } from './art/createArtRequest';
 import { ArtManager, CredManager } from '@phi-hub/sdk';
 import { credConfig, credVerifyEndpoint } from './cred/credConfig';
-import { executor, EXECUTOR_PRIVATE_KEY, verifier } from './config';
+import { getEnvVar, hexToPrivateKey, verifier } from './config';
 import { artSettings } from './art/artConfig';
 import fs from 'fs';
 import path from 'path';
+import { privateKeyToAccount } from 'viem/accounts';
 
 interface ProcessResult {
   configId: number;
@@ -18,6 +19,11 @@ const credChainId = 80084;
 const artChainId = 80084;
 
 const OUTPUT_FILE = path.join(process.cwd(), 'public/assets/output', `cred_art_results_${artChainId}.json`);
+
+const EXECUTOR_PRIVATE_KEY = hexToPrivateKey(getEnvVar('EXECUTOR_PRIVATE_KEY'));
+
+const executor_account = privateKeyToAccount(EXECUTOR_PRIVATE_KEY);
+const executor: Address = executor_account.address;
 
 function loadExistingResults(): ProcessResult[] {
   if (fs.existsSync(OUTPUT_FILE)) {

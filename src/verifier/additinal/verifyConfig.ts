@@ -7,9 +7,11 @@ import { VerifySetting } from '../../utils/types';
 const configPath = path.join(__dirname, 'verifyConfig.json');
 const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
 
-const RESULTS_FILE = path.join(__dirname, 'output', 'cred_art_results.json');
+const RESULTS_FILE = path.join(__dirname, '../../../public/assets/output', 'cred_art_results_80084.json');
+console.log('RESULTS_FILE:', RESULTS_FILE);
 
 const tempVerifySettings = getVerifySettings();
+console.log('tempVerifySettings:', tempVerifySettings);
 
 function loadExistingResults(): { configId: number; credId: number; artId?: number }[] {
   if (fs.existsSync(RESULTS_FILE)) {
@@ -19,18 +21,14 @@ function loadExistingResults(): { configId: number; credId: number; artId?: numb
   return [];
 }
 
-export const baseSettings = {
-  address: config.baseSettings.address as Address,
-  verificationSource: config.baseSettings.verificationSource,
-};
-
 export function getVerifySettings(): VerifySetting[] {
   const existingResults = loadExistingResults();
-
+  console.log('Existing results:', existingResults);
   return existingResults.map((result) => ({
     credId: result.credId,
     endpoint: config.defaultEndpoint.replace('{configId}', result.configId.toString()),
-    ...baseSettings,
+    address: config.baseSettings.address as Address,
+    verificationSource: config.baseSettings.verificationSource,
   }));
 }
 

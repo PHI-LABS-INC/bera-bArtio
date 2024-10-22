@@ -1,10 +1,10 @@
 import { Hex } from 'viem';
 import { ArtManager } from '@phi-hub/sdk';
-import { artSettings } from './art/artConfig';
+import { artSettings } from './artConfig';
 import fs from 'fs';
 import path from 'path';
-import { readFileAsBase64 } from './utils/readFiles';
-import { getEnvVar, hexToPrivateKey } from './config';
+import { readFileAsBase64 } from '../utils/readFiles';
+import { getEnvVar, hexToPrivateKey } from '../config';
 
 const artChainId = 80084; // PHI Testnet
 

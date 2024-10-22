@@ -1,0 +1,8 @@
+{
+  "baseSettings": {
+    "address": "0xAA9bD7C35be4915dC1F18Afad6E631f0AfCF2461",
+    "verificationSource": "https://github.com/PHI-LABS-INC/bera-bArtio"
+  },
+  "overrideSettings": [],
+  "defaultEndpoint": "https:/bera-bartio.vercel.app/api/verify/{configId}"
+}
